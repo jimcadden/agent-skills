@@ -8,6 +8,7 @@ Built to the [Agent Skills specification](https://agentskills.io/specification).
 
 | Skill | Description |
 |-------|-------------|
+| [repoman](skills/repoman/) | The RepoMan entrypoint — first-time setup, enabling a program, enrolling repos or an org, or running a program across enrolled repos; a single intent-dispatching skill |
 | [link-health-scanner](skills/link-health-scanner/) | Scan repos for broken links, create GitHub issues for findings |
 | [link-health-fixer](skills/link-health-fixer/) | Re-verify and fix broken links, open PRs for fixes |
 | [dep-bump-scanner](skills/dep-bump-scanner/) | Monitor Dependabot PRs, classify by severity, flag SLA breaches |
