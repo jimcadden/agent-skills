@@ -8,6 +8,7 @@ Built to the [Agent Skills specification](https://agentskills.io/specification).
 
 | Skill | Description |
 |-------|-------------|
+| [repoman](skills/repoman/) | The RepoMan entrypoint — first-time setup, enabling a program, enrolling repos or an org, or running a program across enrolled repos; a single intent-dispatching skill |
 | [link-health-scanner](skills/link-health-scanner/) | Scan repos for broken links, create GitHub issues for findings |
 | [link-health-fixer](skills/link-health-fixer/) | Re-verify and fix broken links, open PRs for fixes |
 | [dep-bump-scanner](skills/dep-bump-scanner/) | Monitor Dependabot PRs, classify by severity, flag SLA breaches |
@@ -25,7 +26,26 @@ Built to the [Agent Skills specification](https://agentskills.io/specification).
 
 ```
 /plugin marketplace add rossoctl/agent-skills
-/plugin install link-health@rossoctl-agent-skills
+/plugin install <plugin-name>@rossoctl-agent-skills
+```
+
+Install one plugin at a time. Replace `<plugin-name>` with a plugin name such as
+`repoman`, `link-health`, `dep-bump`, `pr-review`, `automation-health`, or
+`repo-sync`. Plugin names are the ones declared in the marketplace, which can
+differ from the per-skill directory names in the [Skills](#skills) table. For
+example, the `link-health` plugin bundles the `link-health-scanner` and
+`link-health-fixer` skills. Run `/plugin` after adding the marketplace to browse
+the authoritative list. Installing one plugin does **not** pull in the others,
+so repeat the `install` line per plugin you want.
+
+### Updating
+
+To pick up new changes after they land upstream, refresh the marketplace and
+update any installed plugins (a Claude Code restart applies plugin updates):
+
+```
+/plugin marketplace update rossoctl-agent-skills
+/plugin update <plugin-name>@rossoctl-agent-skills
 ```
 
 ### Manual
