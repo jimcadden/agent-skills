@@ -26,7 +26,26 @@ Built to the [Agent Skills specification](https://agentskills.io/specification).
 
 ```
 /plugin marketplace add rossoctl/agent-skills
-/plugin install link-health@rossoctl-agent-skills
+/plugin install <plugin-name>@rossoctl-agent-skills
+```
+
+Install one plugin at a time. Replace `<plugin-name>` with a plugin name such as
+`repoman`, `link-health`, `dep-bump`, `pr-review`, `automation-health`, or
+`repo-sync`. Plugin names are the ones declared in the marketplace, which can
+differ from the per-skill directory names in the [Skills](#skills) table. For
+example, the `link-health` plugin bundles the `link-health-scanner` and
+`link-health-fixer` skills. Run `/plugin` after adding the marketplace to browse
+the authoritative list. Installing one plugin does **not** pull in the others,
+so repeat the `install` line per plugin you want.
+
+### Updating
+
+To pick up new changes after they land upstream, refresh the marketplace and
+update any installed plugins (a Claude Code restart applies plugin updates):
+
+```
+/plugin marketplace update rossoctl-agent-skills
+/plugin update <plugin-name>@rossoctl-agent-skills
 ```
 
 ### Manual
