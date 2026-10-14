@@ -72,6 +72,9 @@
       "strict": false,
       "skills": [
         "./skills/repo-sync"
+      ]
+    },
+    {
       "name": "hypershift",
       "description": "Full HyperShift (hosted OpenShift on AWS) cluster lifecycle: setup, preflight, quotas, create/destroy, debug, and TTL-based cleanup",
       "source": "./",
@@ -84,6 +87,15 @@
         "./skills/hypershift-cluster",
         "./skills/hypershift-debug",
         "./skills/hypershift-cleanup"
+      ]
+    },
+    {
+      "name": "repoman",
+      "description": "The RepoMan entrypoint: first-time setup, enabling a program, enrolling repos or an org, or running a program across enrolled repos. A single intent-dispatching skill.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/repoman"
       ]
     }
   ]
